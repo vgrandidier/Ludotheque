@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lolly Dogs</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Lolly Dogs</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/lolly-dogs-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/lolly-dogs-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Toutes les sucettes ont été mangées, et les gourmands petits toutous sont fortement soupçonnés d’avoir fait le coup ! À toi de mener l’enquête ! Quand tu appuies sur leur ventre, ils sortent leur langue ! À chaque tour, lance les dés colorés et essaye de retrouver les toutous dont la couleur de la langue correspond ! Le premier joueur à avoir attrapé 6 toutous gourmands remporte la partie!</p>
+			<p>Lance les dés. Appuie sur 2 toutous pour qu'ils tirent la langue Si c'est la bonne couleur, prend le toutou dans ton parc Quand ton parc est plein, tu gagne la partie!</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de <b>4 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>2-4</b> joueurs</span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">timer</i>
+        				<span><b>15</b> min</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/memoire-observation-rapidite/28509-lolly-dogs.html" target="_blank">22,20 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="price"><a href="https://www.philibertnet.com/fr/blue-orange/156063-lolly-dogs-3664824002571.html" target="_blank">19,95 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="price"><a href="https://www.amazon.fr/Blue-Orange-Soci%C3%A9t%C3%A9-Famille-Original/dp/B0DZXNHBT2/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=24SAFIHHZE3CO&dib=eyJ2IjoiMSJ9.kkFQz3Jc-GBrycawTeiv_qTaat2g6PrjALOkGiq1q0cOMpejOvVFGp7g9HsEFTaz2x11sBLO_wYm0JPHzmZiURuypKVTqa3wDcVXVwork8dE1bUpsxaqnAQC1DhhiGKAClrnApkHoE4YZww_e8eEm88AzSIngNEDKpw0aswG3COPfGJXvNEIXTWXyss0rJfrtBEObvZt9ye5hRXCj7id-Sljc_ViRTAZ-MqzJl7s3bE1e067_urDISYN9xrDD6Qa7j6cQVukK_EjHvkTjPt2yWuN_iCs1PiT6VahIhAM94k.K0sqFopbZr7kUwa4P9IImYDrPCV4O5Rbg2k5zTmuM3I&dib_tag=se&keywords=lolly+dogs+jeu+de+soci%C3%A9t%C3%A9&qid=1759937772&sprefix=lolly+dogs+jeu+de+soci%C3%A9t%C3%A9%2Caps%2C63&sr=8-1" target="_blank">29,88 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="best-price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/jeu-de-socit-lolly-dogs/f-12079-aabpb72357.html?idOffre=4269166889#mpos=1%7Cmp" target="_blank">19,00 €</a></span>
+                		</div>
+            		</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/dV0bQpXg-UI" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#lolly-dogs">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>

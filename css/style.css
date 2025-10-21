@@ -1,0 +1,262 @@
+body {
+	font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #333;
+}
+
+.container {
+	max-width: 1200px;
+        margin: 20px auto;
+        background: white;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-wrap: wrap;
+}
+
+.game-title {
+	text-align: center;
+        font-family: "Rubik Dirt", system-ui;
+  	font-weight: 400;
+  	font-style: normal;
+        font-size: 3em;
+        margin-bottom: 20px;
+        width: 100%;
+	color: #669bbc;
+}
+
+.game-box {
+	flex: 1;
+        padding: 20px;
+        text-align: center;
+        min-width: 300px;
+}
+
+.game-box img {
+	max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+}
+
+.game-info {
+	flex: 2;
+        padding: 20px;
+        min-width: 300px;
+	font-family: "Nunito", sans-serif;
+  	font-optical-sizing: auto;
+  	font-style: normal;
+}
+
+.game-details {
+	display: flex;
+        justify-content: space-around;
+        margin: 20px 0;
+	font-family: Arial, sans-serif;
+}
+
+.detail-item {
+	text-align: center;
+}
+
+.detail-icon {
+	font-size: 2em;
+        margin-bottom: 10px;
+}
+
+.price-list {
+	margin: 20px 0;
+	font-family: Arial, sans-serif;
+}
+
+.price-item {
+	display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        margin: 5px 0;
+        background-color: #f0f0f0;
+        border-radius: 5px;
+        align-items: center;
+}
+
+.vendor {
+	display: inline-block;
+        font-weight: bold;
+	padding: 5px 10px; 
+	border-radius: 5px;
+}
+
+.vendor a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.vendor.lepassetemps {
+	color: #023047;
+}
+
+.vendor.philibert {
+	color: #023047;
+}
+
+.vendor.amazon {
+	color: #023047;
+}
+
+.vendor.cdiscount {
+	color: #023047;
+}
+
+.vendor.fnac {
+	color: #023047;
+}
+
+.price {
+	font-weight: bold;
+        color: black;
+        font-family: Arial, sans-serif;
+	background-color: #d6ccc2; 
+	padding: 5px 10px; 
+	border-radius: 5px;
+}
+
+.price a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.best-price {
+	font-weight: bold;
+        color: black;
+        font-family: Arial, sans-serif;	
+	background-color: #a7c957; 
+	padding: 5px 10px; 
+	border-radius: 5px;
+}
+
+.best-price a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.no-price {
+	font-weight: normal;
+        color: black;
+        font-family: Arial, sans-serif;
+}
+
+.video-container {
+	width: 100%;
+        margin-top: 20px;
+        text-align: center;
+}
+
+.back-button {
+	text-align: center;
+        margin: 20px 0;
+        width: 100%;
+	font-family: Arial, sans-serif;
+}
+
+.back-button a {
+	padding: 10px 20px;
+        background-color: #023047;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+}
+
+.game-details {
+	display: flex;
+    	gap: 10%;
+	margin: 20px 0;
+    	justify-content: center;
+    	flex-wrap: wrap;
+}
+
+.detail {
+	display: flex;
+    	flex-direction: column;
+    	align-items: center;
+    	text-align: center;
+}
+
+.detail i.material-icons {
+	font-size: 36px; /* Taille plus grande */
+    	color: #669bbc;  /* Couleur primaire Material */
+    	margin-bottom: 5px;
+}
+
+.detail span {
+	font-size: 16px;
+    	color: #023047;
+}
+
+.modal {
+    	display: none; /* Par défaut, la modal est cachée */
+    	position: fixed;
+    	z-index: 1;
+    	left: 0;
+    	top: 0;
+    	width: 100vw;
+    	height: 100vh;
+    	overflow: auto;
+    	background-color: rgba(0,0,0,0.9);
+}
+
+/* Classe ajoutée uniquement quand la modal est ouverte */
+.modal--open {
+    	display: flex;
+    	justify-content: center;
+    	align-items: center;
+}
+
+.modal-content {
+    	max-height: 100vh;
+    	max-width: 100vw;
+}
+
+.modal-content img {
+    	max-height: 100vh;
+    	max-width: 100vw;
+    	object-fit: contain;
+    	display: block;
+    	margin: 0 auto;
+}
+
+.close, .prev, .next {
+	position: absolute;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+        user-select: none;
+}
+
+.close {
+	top: 15px;
+        right: 35px;
+}
+
+.prev {
+	top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+}
+
+.next {
+	top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+}
+
+.close:hover, .prev:hover, .next:hover {
+	color: #bbb;
+}
+
+.clickable-img {
+	cursor: pointer;
+        max-width: 300px;
+}

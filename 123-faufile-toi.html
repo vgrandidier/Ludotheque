@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1, 2, 3 Faufile-Toi</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">1, 2, 3 Faufile-Toi</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/123-faufile-toi-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/123-faufile-toi-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Des ratons laveurs tentent de se frayer un chemin dans le jardin. Il y a tant d’objets et de nourriture à chaparder.</p>
+			<p>Mais attention à ne pas se faire repérer par les petits jardiniers depuis la maison ! Ils ont fermé la fenêtre pendant quelques secondes : c’est le moment de se faufiler! Combien de trésors vont ramener les ratons laveurs ? Est-ce que l’un d’entre eux arrivera jusqu’à la maison pour plonger dans la convoitée poubelle?</p>
+			<p>À chaque tour, les joueurs incarnent soit un raton laveur soit le jardinier. Le jardinier ferme la fenêtre, les ratons laveurs ont le temps d’un « 1, 2, 3 Faufile-toi !» pour se frayer un chemin à travers le jardin et se cacher derrière un buisson à temps. Puis le jardinier ouvre la fenêtre de la maison pour tenter d’apercevoir les ratons laveurs qui se seraient mal cachés.</p>
+			<p>À chaque tour, il désigne un obstacle pour tenter de débusquer le gredin qui se cache derrière. S’il y parvient, il gagne un jeton. Les ratons laveurs encore cachés restent en place, de plus ceux derrière un obstacle jaune gagnent un jeton.</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de <b>6 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>2-4</b> joueurs</span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">timer</i>
+        				<span><b>20</b> min</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/memoire-observation-rapidite/26238-123-faufile-toi.html" target="_blank">30,00 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="price"><a href="https://www.philibertnet.com/fr/ravensburger/135514-123-faufile-toi-4005556227938.html?search_query=1+2+3+faufile&results=74" target="_blank">27,95 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="best-price"><a href="https://www.amazon.fr/Ravensburger-Faufile-toi-soci%C3%A9t%C3%A9-Famille-fran%C3%A7aise/dp/B0DXDDNRF8/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=BM2A3XCJC8X3&dib=eyJ2IjoiMSJ9.jgAJvkFr8CQ8ZD67Inrc2Q.l0xhxxV5vgdP83D88u2uYwpdhsTEODZq2749C4I8I14&dib_tag=se&keywords=1%2C2%2C3+Faufile-toi&qid=1759937147&sprefix=1%2C2%2C3+faufile-toi%2Caps%2C66&sr=8-1" target="_blank">26,20 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/jeu-classique-ravensburger-1-2-3-faufile-toi/f-1207902-rav1724516730141.html?idOffre=4109851507" target="_blank">30,66 €</a></span>
+                		</div>
+            		</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/EzlwBu-A6p8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#123-faufile-toi">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>

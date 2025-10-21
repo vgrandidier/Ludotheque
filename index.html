@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Ma Ludothèque Idéale</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+
+    	<style>
+        	@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
+        	body {
+            		font-family: Arial, sans-serif;
+            		margin: 0;
+            		padding: 0;
+            		background-color: #eff1ed;
+            		color: #333;
+        	}
+
+	        .container {
+            		max-width: 1200px;
+            		margin: 20px auto;
+	            	background: #eff1ed;
+            		padding: 20px;
+        	}
+
+        	.header {
+            		text-align: center;
+            		font-family: 'Dancing Script', cursive;
+            		color: black;
+            		padding: 10px;
+            		margin: 0;
+			width: 100%;
+			box-sizing: border-box;
+			font-size: clamp(1.5rem, 5vw, 3rem);
+        	}
+
+        	.game-list {
+            		display: grid;
+            		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            		gap: 20px;
+        	}
+
+        	.game-card {
+            		background: white;
+            		border-radius: 10px;
+            		padding: 15px;
+            		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	            	transition: transform 0.3s;
+			font-family: Arial, sans-serif;
+        	}
+
+        	.game-card:hover {
+            		transform: scale(1.03);
+        	}
+
+        	.game-card img {
+            		max-width: 100%;
+            		height: auto;
+            		border-radius: 5px;
+	        }
+
+        	.game-card h3 {
+            		margin: 10px 0;
+            		font-size: 1.3em;
+            		color: #333;
+        	}
+
+        	.game-card a {
+            		display: inline-block;
+            		padding: 8px 15px;
+            		background-color: #333;
+            		color: white;
+            		text-decoration: none;
+            		border-radius: 5px;
+            		margin-top: 10px;
+	        }
+
+		.game-label {
+    	    		display: table;        /* Permet un ajustement automatique de la largeur */
+    	    		padding: 4px 8px;
+    	    		border-radius: 4px;
+    	    		font-size: 0.8em;
+    	    		font-weight: bold;
+    	    		margin: 10px 0;        /* Marge verticale */
+    	    		background-color: #4a90e2;
+    	    		color: white;
+    	    		text-align: left;
+    	    		width: auto;           /* Largeur automatique selon le contenu */
+		}
+
+		.game-type-label {
+    	    		display: inline-block;
+    	    		padding: 4px 8px;
+    	    		border-radius: 4px;
+    	    		font-size: 0.8em;
+    	    		font-weight: bold;
+    	    		text-align: center;
+    	    		float: right; /* Alignement à droite */
+    	    		margin-top: 10px; /* Ajustez selon votre mise en page */
+		}
+
+		/* Couleur pour "Enfants" */
+		.game-label.child, .game-type-label.child {
+    	    		background-color: #a7c957; 
+    	    		color: #ffffff;
+    	    		margin-right: 10px;
+		}
+
+		/* Couleur pour "Favori" */
+		.game-label.favorite, .game-type_label.favorite {
+    	    		background-color: #fb8500;
+    	    		color: #ffffff;
+    	    		margin-right: 10px;
+		}
+
+		/* Couleur pour "Dans ma ludothèque" */
+		.game-label.buy, game-type-label.buy {
+    	    		background-color: #be95c4; /*#219ebc;*/
+    	    		color: #ffffff;
+    	    		margin-right: 10px;
+		}
+
+		/* Couleur pour "Découverte" */
+		.game-label.discover, game-type-label.discover {
+    	    		background-color: #8ecae6;
+    	    		color: #ffffff;
+    	    		margin-right: 10px;
+		}
+
+		/* Couleur pour "Style de jeu" */
+		.game-label.style, 
+		.game-type-label.cartes, 
+		.game-type-label.collaboratif, 	
+		.game-type-label.construction, 
+		.game-type-label.imagination, 
+		.game-type-label.jeudedes, 
+		.game-type-label.reflexion, 
+		.game-type-label.strategie, 
+		.game-type-label.tactique,
+                .game-type-label.bluff 
+		{
+    	    		background-color: #dad7cd;
+    	    		color: #344e41;
+    	    		margin-right: 10px;
+		}
+
+		.filters {
+    			margin: 20px 0;
+    			text-align: center;
+    			font-family: 'Roboto', sans-serif;
+		}
+
+		.filters label {
+    			margin: 0 10px;
+    			color: #555;
+    			font-weight: 500;
+		}
+
+		.filters select {
+    			margin: 0 10px;
+    			padding: 10px 30px 10px 15px; /* Padding à droite plus grand */
+    			border: 1px solid #ccc;
+    			border-radius: 4px;
+    			background-color: white;
+    			font-size: 16px;
+    			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    			transition: all 0.3s ease;
+    			min-width: 200px;
+    			appearance: none; /* Garde l'apparence par défaut du navigateur */
+    			text-indent: 0.01px; /* Astuce pour Chrome */
+    			text-overflow: '';
+		}
+
+		.filters select:focus {
+    			outline: none;
+    			border-color: #6200ee;
+    			box-shadow: 0 0 0 2px rgba(98, 0, 238, 0.2);
+		}
+
+		.filters select option {
+    			padding: 10px;
+    			background-color: white;
+    			color: #333;
+		}
+
+		.sticky-header {
+    			position: sticky;
+    			top: 0;
+    			background-color: #eff1ed; /* Même couleur que ton fond */
+    			padding: 5px 0;
+    			z-index: 100;
+    			width: 100%; /* Pour s'assurer que la div prend toute la largeur */
+		}
+
+	</style>
+    	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+        <div class="container">
+
+	        <div class="header">Ma Ludothèque Idéale</div>
+
+                <div class="sticky-header">
+                        <div class="filters">
+                                <label for="main-label-filter">Filtrer par type :</label>
+                                <select id="main-label-filter">
+                                        <option value="">Tous</option>
+                                        <option value="favorite">Favori</option>
+                                        <option value="discover">Découverte</option>
+                                        <option value="buy">Dans ma ludothèque</option>
+                                </select>
+
+                                <label for="type-label-filter">Filtrer par catégorie :</label>
+                                <select id="type-label-filter">
+                                        <option value="">Tous</option>
+                                        <option value="cartes">Cartes</option>
+                                        <option value="collaboratif">Collaboratif</option>
+                                        <option value="construction">Construction</option>
+                                        <option value="child">Enfants</option>
+                                        <option value="imagination">Imagination</option>
+                                        <option value="jeudedes">Jeu de dés</option>
+                                        <option value="reflexion">Réflexion</option>
+                                        <option value="strategie">Stratégie</option>
+                                        <option value="tactique">Tactique</option>
+                                </select>
+                        </div>
+                </div>
+
+                <div class="game-list">
+
+                        <!-- 1 2 3 FAUFILE TOI -->
+                        <!-- ----------------- -->
+                        <div class="game-card" id="123-faufile-toi">
+                                <img src="images/123-faufile-toi-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>1, 2, 3 Faufile Toi</h3>
+                                <span class="game-type-label child">Enfants</span>
+                                <a href="123-faufile-toi.html" >Voir la fiche</a>
+                        </div>
+
+                        <!-- 50 MISSIONS -->
+                        <!-- ----------- -->
+                        <div class="game-card" id="50-missions">
+                                <img src="images/50-missions-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>50 Missions</h3>
+                                <a href="50-missions.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- 7 WONDERS ARCHITECTS -->
+                        <!-- -------------------- -->
+                        <div class="game-card" id="7-wonders-architecs">
+                                <img src="images/7-wonders-architects-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>7 Wonders Architects</h3>
+                                <a href="7-wonders-architects.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- AGENT AVENUE -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="agent-avenue">
+                                <img src="images/agent-avenue-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Agent Avenue</h3>
+                                <a href="agent-avenue.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                                <span class="game-type-label bluff">Bluff</span>
+                        </div>
+
+                        <!-- AKROPOLIS -->
+                        <!-- --------- -->
+                        <div class="game-card" id="akropolis">
+                                <img src="images/akropolis-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Akropolis</h3>
+                                <a href="akropolis.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- ARCHEO -->
+                        <!-- ------ -->
+                        <div class="game-card" id="archeo">
+                                <img src="images/archeo-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Archeo</h3>
+                                <a href="archeo.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- BALLOON POP -->
+                        <!-- ----------- -->
+                        <div class="game-card" id="balloon-pop">
+                                <img src="images/balloon-pop-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Balloon Pop</h3>
+                                <a href="balloon-pop.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label tactique">Tactique</span>
+                        </div>
+
+                        <!-- BANDIDO -->
+                        <!-- ------- -->
+                        <div class="game-card" id="bandido">
+                                <img src="images/bandido-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Bandido</h3>
+                                <a href="bandido.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- BEHIND -->
+                        <!-- ------ -->
+                        <div class="game-card" id="behind">
+                                <img src="images/behind-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Behind</h3>
+                                <a href="behind.html" id="behind">Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label reflexion">Réflexion</span>
+                        </div>
+
+                        <!-- BOMB BUSTERS -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="bomb-busters">
+                                <img src="images/bomb-busters-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Bomb Busters</h3>
+                                <a href="bomb-busters.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label reflexion">Réflexion</span>
+                        </div>
+
+                        <!-- CAPTAIN FLIP -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="captain-flip">
+                                <img src="images/captain-flip-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Captain Flip</h3>
+                                <a href="captain-flip.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- CASCADIA -->
+                        <!-- -------- -->
+                        <div class="game-card" id="cascadia">
+                                <img src="images/cascadia-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Cascadia</h3>
+                                <a href="cascadia.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- CHATEAU COMBO -->
+                        <!-- ------------- -->
+                        <div class="game-card" id="chateau-combo">
+                                <img src="images/chateau-combo-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Chateau Combo</h3>
+                                <a href="chateau-combo.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- CITY TOUR -->
+                        <!-- --------- -->
+                        <div class="game-card" id="city-tour">
+                                <img src="images/city-tour-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>City Tour</h3>
+                                <a href="city-tour.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- COFFEE RUSH -->
+                        <!-- ----------- -->
+                        <div class="game-card" id="coffee-rush">
+                                <img src="images/coffee-rush-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Coffee Rush</h3>
+                                <a href="coffee-rush.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- DEDALE -->
+                        <!-- ------ -->
+                        <div class="game-card" id="dedale">
+                                <img src="images/dedale-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Coffee Rush</h3>
+                                <a href="dedale.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                                <span class="game-type-label tactique">Tactique</span>
+                        </div>
+
+                        <!-- DIXIT -->
+                        <!-- ----- -->
+                        <div class="game-card" id="dixit">
+                                <img src="images/dixit-box.jpg" alt="Boîte du jeu Dixit">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Dixit</h3>
+                                <a href="dixit.html" >Voir la fiche</a>
+                                <span class="game-type-label imagination">Imagination</span>
+                        </div>
+
+                        <!-- EARTH -->
+                        <!-- ----- -->
+                        <div class="game-card" id="earth">
+                                <img src="images/earth-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Earth</h3>
+                                <a href="earth.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- EL GRANDE -->
+                        <!-- --------- -->
+                        <div class="game-card" id="el-grande">
+                                <img src="images/el-grande-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>El Grande</h3>
+                                <a href="el-grande.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label tactique">Tactique</span>
+                        </div>
+
+                        <!-- EVERDELL -->
+                        <!-- -------- -->
+                        <div class="game-card" id="everdell">
+                                <img src="images/everdell-box.jpg" alt="Boîte du jeu Everdell">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Everdell</h3>
+                                <a href="everdell.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- EVERGREEN -->
+                        <!-- --------- -->
+                        <div class="game-card" id="evergreen">
+                                <img src="images/evergreen-box.jpg" alt="Boîte du jeu Evergreen">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Evergreen</h3>
+                                <a href="evergreen.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- EXPEDITIONS AUTOUR DU MONDE -->
+                        <!-- --------------------------- -->
+                        <div class="game-card" id="expeditions-autour-du-monde">
+                                <img src="images/expeditions-autour-du-monde-box.jpg" alt="Boîte du jeu Expéditions Autour du Monde">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Expéditions Autour du Monde</h3>
+                                <a href="expeditions-autour-du-monde.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label conquete">Conquête</span>
+                        </div>
+
+                        <!-- FLATIRON -->
+                        <!-- -------- -->
+                        <div class="game-card" id="flatiron">
+                                <img src="images/flatiron-box.jpg" alt="Boîte du jeu Flatiron">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Flatiron</h3>
+                                <a href="flatiron.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- FLIP 7 -->
+                        <!-- ------ -->
+                        <div class="game-card" id="flip-7">
+                                <img src="images/flip-7-box.jpg" alt="Boîte du jeu Flip 7">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Flip 7</h3>
+                                <a href="flip-7.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- FOCUS -->
+                        <!-- ----- -->
+                        <div class="game-card" id="focus">
+                                <img src="images/focus-box.jpg" alt="Boîte du jeu Focus">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Focus</h3>
+                                <a href="focus.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- HARMONIES -->
+                        <!-- --------- -->
+                        <div class="game-card" id="harmonies">
+                                <img src="images/harmonies-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Harmonies</h3>
+                                <a href="harmonies.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- HOME STAGING -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="home-staging">
+                                <img src="images/home-staging-box.jpg" alt="Boîte du jeu Home Staging">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Home Staging</h3>
+                                <a href="home-staging.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- KINGDOMINO -->
+                        <!-- ---------- -->
+                        <div class="game-card" id="kingdomino">
+                                <img src="images/kingdomino-box.jpg" alt="Boîte du jeu Kingdomino">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Kingdomino</h3>
+                                <a href="kingdomino.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- KITES -->
+                        <!-- ----- -->
+                        <div class="game-card" id="kites">
+                                <img src="images/kites-box.jpg" alt="Boîte du jeu Kites">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Kites</h3>
+                                <a href="kites.html" >Voir la fiche</a>
+                                <span class="game-type-label ambiance">Ambiance</span>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- LE GRAND MECHANT MONSTRE -->
+                        <!-- ------------------------ -->
+                        <div class="game-card" id="le-grand-mechant-monstre">
+                                <img src="images/le-grand-mechant-monstre-box.jpg" alt="Boîte du jeu Le Grand Méchant Monstre">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Le Grand Méchant Monstre</h3>
+                                <a href="le-grand-mechant-monstre.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- LE LABYRINTHE MAGIQUE -->
+                        <!-- --------------------- -->
+                        <div class="game-card" id="le-labyrinthe-magique">
+                                <img src="images/le-labyrinthe-magique-box.jpg" alt="Boîte du jeu Le Labyrinthe Magique">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Le Labyrinthe Magique</h3>
+                                <a href="le-labyrinthe-magique.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- LE RALLYE DES VERS DE TERRE -->
+                        <!-- --------------------------- -->
+                        <div class="game-card" id="le-rallye-des-vers-de-terre">
+                                <img src="images/le-rallye-des-vers-de-terre-box.jpg" alt="Boîte du jeu Le Rallye des Vers de Terrs">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Le Rallye des Vers de Terre</h3>
+                                <a href="le-rallye-des-vers-de-terre.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- LES FIEFS DE NORBOIS -->
+                        <!-- -------------------- -->
+                        <div class="game-card" id="les-fiefs-de-norbois">
+                                <img src="images/les-fiefs-de-norbois-box.jpg" alt="Boîte du jeu Les Fiefs de Norbois">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Les Fiefs de Norbois</h3>
+                                <a href="les-fiefs-de-norbois.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- LIVING FOREST -->
+                        <!-- ------------- -->
+                        <div class="game-card" id="living-forest">
+                                <img src="images/living-forest-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Living Forest</h3>
+                                <a href="living-forest.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- LOLLY DOGS -->
+                        <!-- ----------- -->
+                        <div class="game-card" id="lolly-dogs">
+                                <img src="images/lolly-dogs-box.jpg" alt="Boîte du jeu Lolly Dogs">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Lolly Dogs</h3>
+                                <a href="lolly-dogs.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- MAKA BANA -->
+                        <!-- --------- -->
+                        <div class="game-card" id="maka-bana">
+                                <img src="images/maka-bana-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Maka Bana</h3>
+                                <a href="maka-bana.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label conquete">Conquête</span>
+                        </div>
+
+                        <!-- MARRAKECH -->
+                        <!-- --------- -->
+                        <div class="game-card" id="marrakech">
+                                <img src="images/marrakech-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Marrakech</h3>
+                                <a href="marrakech.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label conquete">Conquête</span>
+                        </div>
+
+                        <!-- MIND UP -->
+                        <!-- ------- -->
+                        <div class="game-card" id="mind-up">
+                                <img src="images/mind-up-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Mind Up</h3>
+                                <a href="mind-up.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- MINDBUG -->
+                        <!-- ------- -->
+                        <div class="game-card" id="mindbug">
+                                <img src="images/mindbug-box.jpg" alt="Boîte du jeu Mindbug">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Mindbug</h3>
+                                <a href="mindbug.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label conquete">Conquête</span>
+                        </div>
+
+                        <!-- NEOTOPIA -->
+                        <!-- -------- -->
+                        <div class="game-card" id="neotopia">
+                                <img src="images/neotopia-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Neotopia</h3>
+                                <a href="neotopia.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- ORDER OVERLOAD CAFE -->
+                        <!-- ------------------- -->
+                        <div class="game-card" id="order-overload-cafe">
+                                <img src="images/order-overload-cafe-box.jpg" alt="Boîte du jeu Order Overload Café">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Order Overload Café</h3>
+                                <a href="order-overload-cafe.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label collaboratif">Collaboratif</span>
+                        </div>
+
+                        <!-- ORLEANS -->
+                        <!-- ------- -->
+                        <div class="game-card" id="orleans">
+                                <img src="images/orleans-box.jpg" alt="Boîte du jeu Orléans">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Orléans</h3>
+                                <a href="orleans.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- PALEO -->
+                        <!-- ----- -->
+                        <div class="game-card" id="paleo">
+                                <img src="images/paleo-box.jpg" alt="Boîte du jeu Paléo">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Paléo</h3>
+                                <a href="paleo.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- PEAK TEAM -->
+                        <!-- --------- -->
+                        <div class="game-card" id="peak-team">
+                                <img src="images/peak-team-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Peak Team</h3>
+                                <a href="peak-team.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label cooperatif">Coopératif</span>
+                        </div>
+
+                        <!-- PRESAGES -->
+                        <!-- -------- -->
+                        <div class="game-card" id="presages">
+                                <img src="images/presages-box.jpg" alt="Boîte du jeu Présages">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Présages</h3>
+                                <a href="presages.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- QWINTO -->
+                        <!-- ------ -->
+                        <div class="game-card" id="qwinto">
+                                <img src="images/qwinto-box.jpg" alt="Boîte du jeu Qwinto">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Qwinto</h3>
+                                <a href="qwinto.html" >Voir la fiche</a>
+                                <span class="game-type-label jeudedes">Jeu de dés</span>
+                        </div>
+
+                        <!-- SAIL -->
+                        <!-- ---- -->
+                        <div class="game-card" id="sail">
+                                <img src="images/sail-box.jpg" alt="Boîte du jeu Sail">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Sail</h3>
+                                <a href="sail.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- SIXTO -->
+                        <!-- ----- -->
+                        <div class="game-card" id="sixto">
+                                <img src="images/sixto-box.jpg" alt="Boîte du jeu Sixto">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Sixto</h3>
+                                <a href="sixto.html" >Voir la fiche</a>
+                                <span class="game-type-label jeudedes">Jeu de dés</span>
+                        </div>
+
+                        <!-- SKYJO -->
+                        <!-- ----- -->
+                        <div class="game-card" id="skyjo">
+                                <img src="images/skyjo-box.jpg" alt="Boîte du jeu Skyjo">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Skyjo</h3>
+                                <a href="skyjo.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- SKY TEAM -->
+                        <!-- -------- -->
+                        <div class="game-card" id="sky-team">
+                                <img src="images/sky-team-box.jpg" alt="Boîte du jeu Sky Team">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Sky Team</h3>
+                                <a href="sky-team.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label collaboratif">Collaboratif</span>
+                        </div>
+
+                        <!-- SPY GUY -->
+                        <!-- ------- -->
+                        <div class="game-card" id="spy-guy">
+                                <img src="images/spy-guy-box.jpg" alt="Boîte du jeu Spy Guy">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Spy Guy</h3>
+                                <a href="spy-guy.html" >Voir la fiche</a>
+                                <span class="game-type-label child">Enfants</span>
+                        </div>
+
+                        <!-- SYNC OR SWIM -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="sync-or-swim">
+                                <img src="images/sync-or-swim-box.jpg" alt="Boîte du jeu Sync or Swim">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Sync or Swim</h3>
+                                <a href="sync-or-swim.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                                <span class="game-type-label construction">Collaboratif</span>
+                        </div>
+
+                        <!-- SYNCRO -->
+                        <!-- ------ -->
+                        <div class="game-card" id="syncro">
+                                <img src="images/syncro-box.jpg" alt="Boîte du jeu Syncro">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Syncro</h3>
+                                <a href="syncro.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- TAKE IT EASY -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="take-it-easy">
+                                <img src="images/take-it-easy-box.jpg" alt="Boîte du jeu Take It Easy">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Take It Easy</h3>
+                                <a href="take-it-easy.html" >Voir la fiche</a>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- TAKE TIME -->
+                        <!-- --------- -->
+                        <div class="game-card" id="take-time">
+                                <img src="images/take-time-box.jpg" alt="Boîte du jeu Take Time">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Take Time</h3>
+                                <a href="take-time.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                                <span class="game-type-label collaboratifs">Collaboratif</span>
+                        </div>
+
+                        <!-- TERRAFORMING MARS -->
+                        <!-- ----------------- -->
+                        <div class="game-card" id="terraforming-mars">
+                                <img src="images/terraforming-mars-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Terraforming Mars</h3>
+                                <a href="terraforming-mars.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- THE GANG -->
+                        <!-- -------- -->
+                        <div class="game-card" id="the-gang">
+                                <img src="images/the-gang-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>The Gang</h3>
+                                <a href="the-gang.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- THE VALE OF ETERNITY -->
+                        <!-- -------------------- -->
+                        <div class="game-card" id="the-vale-of-eternity">
+                                <img src="images/the-vale-of-eternity-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>The Vale of Eternity</h3>
+                                <a href="the-vale-of-eternity.html" >Voir la fiche</a>
+                                <span class="game-type-label strategies">Stratégie</span>
+                                <span class="game-type-label cartes">Cartes</span>
+                        </div>
+
+                        <!-- TIME BOMB -->
+                        <!-- --------- -->
+                        <div class="game-card" id="time-bomb">
+                                <img src="images/time-bomb-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Time Bomb</h3>
+                                <a href="time-bomb.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                                <span class="game-type-label collaboratif">Collaboratif</span>
+                        </div>
+
+                        <!-- TOWER UP -->
+                        <!-- -------- -->
+                        <div class="game-card" id="tower-up">
+                                <img src="images/tower-up-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Tower Up</h3>
+                                <a href="tower-up.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+
+                        <!-- UNDER FALLING SKIES -->
+                        <!-- ------------------- -->
+                        <div class="game-card" id="under-falling-skies">
+                                <img src="images/under-falling-skies-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Under Falling Skies</h3>
+                                <a href="under-falling-skies.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- WAZABI -->
+                        <!-- ------ -->
+                        <div class="game-card" id="wazabi">
+                                <img src="images/wazabi-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label discover">Découverte</span>
+                                <h3>Wazabi</h3>
+                                <a href="wazabi.html" >Voir la fiche</a>
+                                <span class="game-type-label cartes">Cartes</span>
+                                <span class="game-type-label jeudedes">Jeu de dés</span>
+                        </div>
+
+                        <!-- WELCOME TO THE MOON -->
+                        <!-- ------------------- -->
+                        <div class="game-card" id="welcome-to-the-moon">
+                                <img src="images/welcome-to-the-moon-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label favorite">Favori</span>
+                                <h3>Welcome to the Moon</h3>
+                                <a href="welcome-to-the-moon.html" >Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- ZENITH -->
+                        <!-- ------ -->
+                        <div class="game-card" id="zenith">
+                                <img src="images/zenith-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Zenith</h3>
+                                <a href="zenith.html">Voir la fiche</a>
+                                <span class="game-type-label strategie">Stratégie</span>
+                                <span class="game-type-label construction">Construction</span>
+                        </div>
+                </div>
+        </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+        const mainFilter = document.getElementById('main-label-filter');
+        const typeFilter = document.getElementById('type-label-filter');
+        const gameCards = document.querySelectorAll('.game-card');
+
+        function filterGames() {
+                const mainValue = mainFilter.value;
+                const typeValue = typeFilter.value;
+
+                gameCards.forEach(card => {
+                const mainLabel = card.querySelector('.game-label');
+                const typeLabels = card.querySelectorAll('.game-type-label');
+                let mainMatch = !mainValue || (mainLabel && mainLabel.classList.contains(mainValue));
+                let typeMatch = !typeValue || Array.from(typeLabels).some(label => label.classList.contains(typeValue));
+
+                if (mainMatch && typeMatch) {
+                        card.style.display = '';
+                } else {
+                        card.style.display = 'none';
+                }
+                });
+        }
+
+        mainFilter.addEventListener('change', filterGames);
+        typeFilter.addEventListener('change', filterGames);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bomb Busters</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Bomb Busters</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/bomb-busters-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/bomb-busters-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Bomb Busters est un jeu coopératif de déduction dans lequel vous incarnez une équipe de démineurs qui doivent désamorcer une bombe!</p>
+			<p>Mais attention ! Les fils de cette bombe sont répartis entre tous les joueurs et vous ne voyez que les vôtres. Pour réussir votre mission, vous allez devoir couper des fils identiques entre votre support et celui d’un coéquipier.</p>
+			<p>Il va donc falloir faire preuve de déduction et d’un peu de mémoire ! Gare à l’explosion lors des 66 missions rejouables, aux règles uniques et évolutives avec 5 boites “surprises”!</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de <b>10 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>1-4</b> joueurs</span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">timer</i>
+        				<span><b>20</b> min</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/reflexion-logique-deduction/26543-bombbusters.html" target="_blank">35,00 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="best-price"><a href="https://www.philibertnet.com/fr/cocktail-games/140599-bomb-busters-3760052143861.html?search_query=bomb+busters&results=3" target="_blank">31,50 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="best-price"><a href="https://www.amazon.fr/Asmodee-Cocktail-Games-Bomb-Busters/dp/B0DKFYMTXD/ref=sr_1_1_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=20NT2W3KI0LUB&dib=eyJ2IjoiMSJ9.2fykaNtd24mQWOVXqQ5rw_PsOxJhPDM6OzZs0wiqoiL_e4lqyzhZw5-hGBmPnopT9-reLUtLZz9KYiPb7jjeIVh0ipP1pKZQww4iqL2miQCegV7l944XGEtAgBcspGIYtzEabOPhRSXS_B4hceHsZh8EkXDusFtS7zgdNX2H15yFdd_hdTPv_Fe3FPZyNkmquGO_58TMzg5t3ZX4pJiviaBw24tke-U8sB2aHdpWQN_K2u_3H8udvlTzJgb7y7zhbclfAXCZSM3bICsporKRxIgEit2b2Kmo1QACzs9wV70.-B8S5rKXkZ6kO2j42aUsply3jkiUOh_NpYPc1KUmYHU&dib_tag=se&keywords=bomb+busters&qid=1759416952&sprefix=bomb+busters%2Caps%2C80&sr=8-1-spons&ufe=app_do%3Aamzn1.fos.bb6ea7e0-0ef7-4fc8-9adc-4bf1477881dd&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank">31,50 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="best-price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/bomb-busters/f-12079-aaapx95366.html?idOffre=4239919153" target="_blank">31,50 €</a></span>
+                		</div>
+            		</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/zcW3JOYS_zM" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#bomb-busters">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>

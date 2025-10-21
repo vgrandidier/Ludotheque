@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paléo</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Paléo</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/paleo-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/paleo-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Au début de l’Âge de Pierre, bien avant que l’Humanité ne se sédentarise, chaque journée était un défi à relever. Trouver de la nourriture n'était pas une tâche facile et de nombreux dangers se cachaient au cœur de cette nature sauvage. C'est en agissant ensemble que les membres des tribus réussirent à maîtriser leur environnement et à laisser des traces durables de leur histoire pour les générations futures.</p>
+			<p>Dans Paleo, les joueurs vont décider collectivement de la répartition des tâches: exploration, mission, invention, etc. Ce n'est qu'en arrivant dans un lieu que vous saurez exactement ce qui vous y attend. Vous pourriez acquérir de la nourriture ou des ressources, trouver ce dont vous avez besoin pour fabriquer un objet utile, découvrir que vous pouvez aider quelqu'un d'autre dans son projet, ou subir une morsure de serpent qui vous rapproche de la mort. La vie est pleine de merveilles et de terreurs...</p>
+			<p>Plus vous l'explorerez, plus vous disposerez d'informations, ce qui vous permettra de mieux surmonter les obstacles que vous rencontrerez, grâce à des outils adéquats, à l'aide de vos compagnons et aussi d'un peu de chance. Avec Paelo, vivez de passionnantes aventures à l'Âge de Pierre !</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de <b>10 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>2-4</b> joueurs</span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">timer</i>
+        				<span><b>45</b> min</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/les-jeux-a-deux/18951-paleo.html" target="_blank">48,00 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="price"><a href="https://www.philibertnet.com/fr/hans-im-gluck/90066-paleo-3558380081609.html" target="_blank">42,95 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="best-price"><a href="https://www.amazon.fr/Asmodee-Pr%C3%A9historique-Survivez-Anc%C3%AAtres-Fran%C3%A7ais/dp/B08MFKPM64/ref=sr_1_6?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=3Q1QW7IR08MIB&dib=eyJ2IjoiMSJ9.aP6Ka-_9-PmLcY3iIBe-Pu8tqOXsTsou5ohkoHgw6QjZy8krDJ1FuwnPElhOIUgIm4u_Xh7h-tNPo6WIgvxOlar6AJBoaOi-ijzV6RvTrNPCqg0zYZlBX-ThiR4XTgkkClaOX7zMxl6u_e3_LZqwwTxuc7IrSmEY7hGTJHVKbBVWpHjvjP3kRg5TO1COgGosLkfDcAWL3kkpMtqduKjBy1KQ8YWcOGka3kXrgZ-_oE40UseQb60mGuFJybZWlarERh4ZUFJidM3u-Mtmn51jzhaA1HxOm2_xc3C4afCkv2k.thRlkjTAvlLSdT_VCObLgc6W94m7ikzJcF12q0a8rzc&dib_tag=se&keywords=Paleo%2Bjeu&qid=1760024046&sprefix=paleo%2Bjeu%2Caps%2C70&sr=8-6&th=1" target="_blank">36,87 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/jeu-de-strategie-asmodee-paleo/f-12079-asm1703131269001.html?idOffre=3199432422#mpos=3%7Cmp" target="_blank">51,53 €</a></span>
+                		</div>
+				<!-- ------- -->
+				<!-- LA FNAC -->
+				<!-- ------- -->
+                		<div class="price-item">
+                    			<span class="vendor fnac">La Fnac</span>
+                    			<span class="price"><a href="https://www.fnac.com/Jeu-de-strategie-Asmodee-Paleo/a16034076/w-4" target="_blank">38,99 €</a></span>
+                		</div>
+            		</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/OXPN-AX9J5I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#paleo">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>

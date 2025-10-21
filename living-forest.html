@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Forest</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Living Forest</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/living-forest-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/living-forest-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Vous êtes un Esprit de la nature et vous avez été désigné pour sauver la forêt et son Arbre sacré des flammes d’Onibi. Vous n’êtes pas seul dans cette mission, les Animaux gardiens se sont réunis autour du Cercle des Esprits où vous progressez, et vous apportent une aide précieuse.</p>
+			<p>À chaque tour vous révélez une à une vos cartes Animal Gardien en essayant d’obtenir la meilleure combinaison d’éléments possible pour réaliser vos deux actions. À la fin du tour, vous récupérez autant de cartes Varans de Feu qu’il y a d’incendies non éteints. Ces cartes ont le même effet que les cartes Animal Gardien soltaire sauf qu’elles ne vous apportent aucun bienfait en contrepartie.</p>
+			<p>Vous remportez la partie, en plantant 12 arbres protecteurs différents ou en récoltant 12 fleurs sacrées pour réveiller Sanki ou en éteignant 12 incendies pour repousser définitivement Onibi.</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de <b>8 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>2-4</b> joueurs</span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">timer</i>
+        				<span><b>30</b> min</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/developpement-construction/20539-living-forest.html" target="_blank">38,80 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="price"><a href="https://www.philibertnet.com/fr/ludonaute/99583-living-forest-3760269592100.html" target="_blank">34,95 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="best-price"><a href="https://www.amazon.fr/Asmodee-Living-Forest-Joueurs-Plus/dp/B0BJ12BW1N/ref=sr_1_1_sspa?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=LHA1KVEURZD4&dib=eyJ2IjoiMSJ9.gRc9sqdeiuaMIXRfA-fFwICTFboXKjJH7_6pmVe-aWKvV-zKK5iBPgVXPqT0KsIQ38VuFFYhaH2Xm5ZjGcep-XnPHl89ETMtP1y7IBg0fWAIZxqcqT_1wArb6lzNUufDIpYiA6VHtn1iSu1eF-YgwnvLEYQyjOXs9sD0M1kUeZLmy_8f9qWicajWZBBUt4zERdIdgxmc2yQivVBhs0O0j652GlXlUp0zeWHlMfi3Q4Kti8Hh8czfNrAeeExccqjCwXUNUWefnIlT0NHAzf9uj-44sDlf9Q4aXtFLJ_UhpdI.wGp2ByME_Ydn9-Fb_r_spxjE2i9pyc0sFGEOkx_9o4c&dib_tag=se&keywords=Living+Forest+jeu&qid=1760349711&sprefix=living+forest+jeu%2Caps%2C127&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1" target="_blank">33,90 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/living-forest-jeu-de-societe-de-2-a-4-joueurs/f-12079-asm1738072952092.html?idOffre=4206952167#mpos=6|mp" target="_blank">35,95 €</a></span>
+                		</div>
+            		</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/qAXZpx0G0G4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#living-forest">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>
