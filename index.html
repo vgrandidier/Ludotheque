@@ -28,14 +28,13 @@
         	}
 
         	.header {
+        		font-size: 3.5em;
             		text-align: center;
             		font-family: 'Dancing Script', cursive;
             		color: black;
             		padding: 10px;
             		margin: 0;
 			width: 100%;
-			box-sizing: border-box;
-			font-size: clamp(1.5rem, 5vw, 3rem);
         	}
 
         	.game-list {
@@ -141,7 +140,8 @@
 		.game-type-label.reflexion, 
 		.game-type-label.strategie, 
 		.game-type-label.tactique,
-                .game-type-label.bluff 
+                .game-type-label.bluff,
+                .game-type-label.escape 
 		{
     	    		background-color: #dad7cd;
     	    		color: #344e41;
@@ -149,19 +149,24 @@
 		}
 
 		.filters {
-    			margin: 20px 0;
-    			text-align: center;
-    			font-family: 'Roboto', sans-serif;
+                        margin: 20px 0;
+                        text-align: center;
+                        font-family: 'Roboto', sans-serif;
+                        display: flex; /* Par défaut, affiche en ligne (pour ordinateur) */
+                        flex-wrap: wrap; /* Permet le retour à la ligne si nécessaire */
+                        justify-content: center; /* Centre les éléments */
+                        align-items: center; /* Centre verticalement */
+                        gap: 10px; /* Espacement entre les éléments */
 		}
 
 		.filters label {
-    			margin: 0 10px;
+    			margin: 0; /* 10px; */
     			color: #555;
     			font-weight: 500;
 		}
 
 		.filters select {
-    			margin: 0 10px;
+    			margin: 0; /* 10px; */
     			padding: 10px 30px 10px 15px; /* Padding à droite plus grand */
     			border: 1px solid #ccc;
     			border-radius: 4px;
@@ -196,6 +201,23 @@
     			width: 100%; /* Pour s'assurer que la div prend toute la largeur */
 		}
 
+                /* Pour mobile */
+                @media (max-width: 768px) {
+                        .filters {
+                                flex-direction: column; /* Affiche les éléments en colonne */
+                                align-items: stretch; /* Étire les éléments pour qu'ils prennent toute la largeur */
+                        }
+
+                        .filters label,
+                        .filters select {
+                                width: 100%; /* Prend toute la largeur disponible */
+                                margin-bottom: 10px; /* Espacement entre les éléments */
+                        }
+
+                        .header {
+                                font-size: 2em;
+                        }
+                }                
 	</style>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -206,7 +228,7 @@
 
                 <div class="sticky-header">
                         <div class="filters">
-                                <label for="main-label-filter">Filtrer par type :</label>
+                                <label for="main-label-filter">Filtrer par <b>Type</b> :</label>
                                 <select id="main-label-filter">
                                         <option value="">Tous</option>
                                         <option value="favorite">Favori</option>
@@ -214,7 +236,7 @@
                                         <option value="buy">Dans ma ludothèque</option>
                                 </select>
 
-                                <label for="type-label-filter">Filtrer par catégorie :</label>
+                                <label for="type-label-filter">Filtrer par <b>Catégorie</b> :</label>
                                 <select id="type-label-filter">
                                         <option value="">Tous</option>
                                         <option value="cartes">Cartes</option>
@@ -874,6 +896,16 @@
                                 <h3>Under Falling Skies</h3>
                                 <a href="under-falling-skies.html" >Voir la fiche</a>
                                 <span class="game-type-label strategie">Stratégie</span>
+                        </div>
+
+                        <!-- UNLOCK SUPERNATURAL ADVENTURES -->
+                        <!-- ------------------------------ -->
+                        <div class="game-card" id="unlock-supernatural-adventures">
+                                <img src="images/unlock-supernatural-adventures-box.jpg" alt="Boîte du jeu">
+                                <span class="game-label buy">Dans ma ludothèque</span>
+                                <h3>Unlock Supernatural Adventures</h3>
+                                <a href="unlock-supernatural-adventures.html" >Voir la fiche</a>
+                                <span class="game-type-label escape">Escape Game</span>
                         </div>
 
                         <!-- WAZABI -->
