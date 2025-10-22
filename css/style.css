@@ -195,8 +195,8 @@ body {
 
 .game-details {
 	display: flex;
-    gap: 2%;
-	margin: 20px 0;
+    gap: 0%;
+	margin: 10px 0;
     justify-content: left;
     flex-wrap: wrap;
 }
@@ -215,7 +215,7 @@ body {
     flex-direction: column;
     align-items: center;
     text-align: center;
-	padding-right: 15px;
+	padding-right: 10px;
 	width: 100px;
 }
 .detail {
