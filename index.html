@@ -1028,32 +1028,67 @@
         </div>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-        const mainFilter = document.getElementById('main-label-filter');
-        const typeFilter = document.getElementById('type-label-filter');
-        const gameCards = document.querySelectorAll('.game-card');
+        document.addEventListener('DOMContentLoaded', function() {
+                const mainFilter = document.getElementById('main-label-filter');
+                const typeFilter = document.getElementById('type-label-filter');
+                const gameCards = document.querySelectorAll('.game-card');
 
-        function filterGames() {
-                const mainValue = mainFilter.value;
-                const typeValue = typeFilter.value;
+                function filterGames() {
+                        const mainValue = mainFilter.value;
+                        const typeValue = typeFilter.value;
 
-                gameCards.forEach(card => {
-                const mainLabel = card.querySelector('.game-label');
-                const typeLabels = card.querySelectorAll('.game-type-label');
-                let mainMatch = !mainValue || (mainLabel && mainLabel.classList.contains(mainValue));
-                let typeMatch = !typeValue || Array.from(typeLabels).some(label => label.classList.contains(typeValue));
+                        gameCards.forEach(card => {
+                        const mainLabel = card.querySelector('.game-label');
+                        const typeLabels = card.querySelectorAll('.game-type-label');
+                        let mainMatch = !mainValue || (mainLabel && mainLabel.classList.contains(mainValue));
+                        let typeMatch = !typeValue || Array.from(typeLabels).some(label => label.classList.contains(typeValue));
 
-                if (mainMatch && typeMatch) {
-                        card.style.display = '';
-                } else {
-                        card.style.display = 'none';
+                        if (mainMatch && typeMatch) {
+                                card.style.display = '';
+                        } else {
+                                card.style.display = 'none';
+                        }
+                        });
                 }
-                });
+
+                mainFilter.addEventListener('change', filterGames);
+                typeFilter.addEventListener('change', filterGames);
+        });
+
+        // Fonction pour récupérer l'état actuel des filtres
+        function getFiltres() {
+        return {
+                type: document.getElementById('main-label-filter').value,
+                category: document.getElementById('type-label-filter').value,
+        };
         }
 
-        mainFilter.addEventListener('change', filterGames);
-        typeFilter.addEventListener('change', filterGames);
-});
+        // Écoute les changements sur les champs de filtre
+        document.querySelectorAll('select, input').forEach(el => {
+        el.addEventListener('change', () => {
+                localStorage.setItem('filtres', JSON.stringify(getFiltres()));
+        });
+        });
+
+        // Restaure les filtres au chargement de la page
+        window.addEventListener('load', () => {
+        const filtresSauvegardes = localStorage.getItem('filtres');
+        if (filtresSauvegardes) {
+                const filtres = JSON.parse(filtresSauvegardes);
+                document.getElementById('main-label-filter').value = filtres.type;
+                document.getElementById('type-label-filter').value = filtres.category;
+                appliquerFiltres();
+        }
+        });
+
+        // Fonction pour appliquer les filtres
+        function appliquerFiltres() {
+        const type = document.getElementById('main-label-filter').value;
+        const category = document.getElementById('type-label-filter').value;
+        console.log(`Filtres appliqués : main-label-filter=${type}, type-label-filter=${category}`);
+        // Ajoute ici ta logique pour filtrer la liste des jeux
+        }
+
 </script>
 
 </body>
