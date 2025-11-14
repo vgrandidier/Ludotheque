@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trio</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Trio</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/trio-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/trio-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Soyez le plus rusé pour déduire quels numéros sont dans les mains adverses et sur la table. Trouverez-vous les trios de cartes identiques? Qui sera le plus rusé pour déduire quels numéros se cachent sous les cartes ?</p>
+			<p>Dévoilez 2 cartes Numéro soit sur la table, soit dans la main d’un joueur (les cartes y sont classées du plus petit au plus grand). Attention, seulement le plus petit numéro ou le plus grand. Si les 2 cartes sont identiques, rejouez! Trouvez les 3 cartes identiques et vous gagnez ce Trio !</p>
+			<p>Vous remportez la partie si vous avez 2 ou 3 Trios (en fonction du mode de jeu) ou si vous avez le trio de 7!</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de<br><b>7 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>3-6</b><br>joueurs</span>
+    				</div>
+    				<div class="detail-no-border">
+        				<i class="material-icons">timer</i>
+        				<span><b>15</b><br>minutes</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/petit-jeu-de-cartes/23989-trio.html" target="_blank">13,00 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="price"><a href="https://www.philibertnet.com/fr/cocktail-games/121327-trio-3760052143731.html" target="_blank">11,90 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="best-price"><a href="https://www.amazon.fr/Asmodee-Cocktail-Games-Soci%C3%A9t%C3%A9-fran%C3%A7aise/dp/B0C2PN2TBG/ref=sr_1_2?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=142OAM4RQ8QT1&dib=eyJ2IjoiMSJ9.ANQUdy-sjLHtFWreQpiUYTMUw7XhoSpWRA1uBEutKnk6GJiR69OftEX4VUZ4LDvLjkuvsyDnJAZyry59tFhBEDLtQ9eYp9IsuTvNC01Mj_YT8IQ4ntm9hBmXsjYSgbfhb9GgGq9nNSg_ODuuyJ4XXlvUq4CGk0wnnY7ZEMvov2uoszWUXJepCaM0iQhNJwdbAZxYaI9Yt0f-Z5yWzlNAKeGHoGYPHCrfEn39CHhGnFOOqNvpiV8QasjTxElULIqtGb9ILVmYlKCX7uN1Uxq9jnvs-TFs_Y92nOVjc_oKFZc.KFdICx-bW6GlFypuTQfckQIjsqZObk7LbErGBP77L6A&dib_tag=se&keywords=trio%2Bjeu&qid=1761205734&sprefix=trio%2Bjeu%2Caps%2C124&sr=8-2&th=1" target="_blank">11,50 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="best-price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/trio-asmodee-des-7-ans/f-12079-coc3760052143731.html?idOffre=3284890769&sw=6c3f5a6c4f636c79122073951ec50b993e2e50cda47e312bd75ffaff6a9730ad6aa498bc476eb5da5aa54794bc78e7c8180e23d16f71076a9a5b0d493b82ae5238747710bfbb25e99d00b56a28b4a20ae7bf7837a7c2fb181ca6023726055f0e058a111e93818a4610c2201bb23fe945b0f52cc5ad6694a681f1ee76f957f494#mpos=1|cd" target="_blank">11,50 €</a></span>
+                		</div>
+				<!-- ------- -->
+				<!-- LA FNAC -->
+				<!-- ------- -->
+                		<div class="price-item">
+                    			<span class="vendor fnac">La Fnac</span>
+                    			<span class="price"><a href="https://www.fnac.com/Jeu-d-ambiance-Asmodee-Trio/a17955388/w-4" target="_blank">11,99 €</a></span>
+                		</div>
+            		</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/v3vuiefHd30" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#trio">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>
