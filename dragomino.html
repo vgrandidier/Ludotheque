@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fragomino</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Dragomino</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/dragomino-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/dragomino-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Vous avez été nommé «dresseur de dragon» et vous avez la chance de partir à leur rencontre sur une île mystérieuse. Mais vous n’êtes pas le seul dresseur envoyé sur ces terres. Qui de vous découvrira le plus de bébés dragons ? </p>
+			<p>Dragomino est une version enfant de Kingdomino à jouer à partir de 5 ans, dans laquelle vous retrouverez les bonnes sensations de Kingdomino!</p>
+			<p>Partez explorer l’île aux dragons et tentez de découvrir un maximum de bébés dragons dans les différents paysages que vous traversez !</p>
+			<p>La partie se termine quand tous les dominos de la boite ont été joués. Chaque joueur compte son nombre de points. Celui qui en a le plus remporte la partie!</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de<br><b>5 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>2-4</b><br>joueurs</span>
+    				</div>
+    				<div class="detail-no-border">
+        				<i class="material-icons">timer</i>
+        				<span><b>30</b><br>minutes</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+                		<div class="price-item">
+                    			<span class="vendor lepassetemps">Le Passe Temps</span>
+                    			<span class="price"><a href="https://www.le-passe-temps.com/strategie-competition/18002-dragomino.html" target="_blank">22,20 €</a></span>
+                		</div>
+				<!-- ----- -->
+				<!-- LUDUM -->
+				<!-- ----- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Ludum</span>
+                    			<span class="price"><a href="https://www.ludum.fr/avec-des-enfants-5-7-ans/dragomino-364" target="_blank">19,90 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Philibert</span>
+                    			<span class="price"><a href="https://www.philibertnet.com/fr/jeux-de-societe/86824-dragomino-3664824000775.html?search_query=dragomino&results=1#img" target="_blank">19,95 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- PLAYIN -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor philibert">Playin</span>
+                    			<span class="price"><a href="https://www.play-in.com/fr/produit/283167/dragomino" target="_blank">19,90 €</a></span>
+                		</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+                		<div class="price-item">
+                    			<span class="vendor amazon">Amazon</span>
+                    			<span class="best-price"><a href="https://www.amazon.fr/Blue-Orange-Dragomino-Kingdomino-Enfants/dp/B08BZFF5TX/ref=sr_1_1?__mk_fr_FR=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1DLEKV0WDW2GK&dib=eyJ2IjoiMSJ9.uuNW676ukETUzY7S3y7IQgP7PRyMlWVuHJPbZSq4BRqCrB6wcWfPkUvmdfoMkogih7jk9GlCWIusjmJfzmnDONe1tOdUieS0Op_RDQe8OeRoBo6uKHqA1x8QmXS5_0vrgX67As3Qq_6TjIV9mit99Wb3HETBvPMvuOc9Fma8vTM5jiDnzPuA77f9i0c47QHDEXep8_H4P2kT1drOIUSxFJT0OGUhLNIxber77uzoAkN7t5X_a84mX3i4AAl3KD46nES3fL2c-jfvgGw_0-_Y7Y2nMi_RyYW1mRWVbHL2p64.elrbp4dDwWxq6vw4z-hNBPYuVM1-6CjoX0lVTFu774E&dib_tag=se&keywords=dragomino&qid=1775566909&sprefix=dragomino%2Caps%2C233&sr=8-1" target="_blank">17,58 €</a></span>
+                		</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+                		<div class="price-item">
+                    			<span class="vendor cdiscount">Cdiscount</span>
+                    			<span class="price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/dragomino-jeu-de-societe-blue-orange-domino/f-12079-bla3664824000775.html#mpos=1|mp" target="_blank">21,06 €</a></span>
+                		</div>
+				<!-- ------- -->
+				<!-- LA FNAC -->
+				<!-- ------- -->
+                		<div class="price-item">
+                    			<span class="vendor fnac">La Fnac</span>
+                    			<span class="price"><a href="https://www.fnac.com/Jeu-de-reflexion-Blue-Orange-Dragomino/a15040640/w-4" target="_blank">19,99 €</a></span>
+                		</div>
+				</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/MMkIu2qJUDU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#dragomino">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>
