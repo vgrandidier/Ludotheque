@@ -244,7 +244,33 @@
                         .header {
                                 font-size: 2em;
                         }
-                }                
+                }     
+                
+                .game-details {
+                        display: flex;
+                        gap: 0%;
+                        margin: 0;
+                        justify-content: left;
+                        flex-wrap: wrap;
+                }
+
+                .detail, .detail-no-border {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        text-align: center;
+                        padding-right: 10px;
+                        width: 80px;
+                }
+                .detail {
+                        border-right: solid 1px #669bbc;
+                }
+
+                .detail i.material-icons, .detail-no-border i.material-icons {
+                        font-size: 36px; /* Taille plus grande */
+                        color: #669bbc;  /* Couleur primaire Material */
+                        margin-bottom: 5px;
+                }
 	</style>
     	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -1039,6 +1065,20 @@
                                 <img src="images/splendor-duel-box.jpg" alt="Boîte du jeu">
                                 <span class="game-label discover">Liste de Souhaits</span>
                                 <h3>Splendor Duel</h3>
+                                <div class="game-details">
+                                        <div class="detail">
+                                                <i class="material-icons">face</i>
+                                                <span>à partir de<br><b>10 ans</b></span>
+                                        </div>
+                                        <div class="detail">
+                                                <i class="material-icons">people</i>
+                                                <span><b>2</b><br>joueurs</span>
+                                        </div>
+                                        <div class="detail-no-border">
+                                                <i class="material-icons">timer</i>
+                                                <span><b>30</b><br>minutes</span>
+                                        </div>
+			        </div>
                                 <a href="splendor-duel.html" >Voir la fiche</a>
                                 <span class="game-type-label default">Compétitif</span>
                                 <span class="game-type-label default">Deck Building</span>
