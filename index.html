@@ -103,6 +103,17 @@
     	    		margin-top: 10px; /* Ajustez selon votre mise en page */
 		}
 
+		.game-category-label {
+    	    		display: inline-block;
+    	    		padding: 4px 8px;
+    	    		border-radius: 4px;
+    	    		font-size: 0.8em;
+    	    		font-weight: bold;
+    	    		text-align: center;
+    	    		float: left; /* Alignement à droite */
+    	    		margin-top: 10px; /* Ajustez selon votre mise en page */
+		}
+
 		/* Couleur pour "Enfants" */
 		.game-label.child, .game-type-label.child {
     	    		background-color: #a7c957; 
@@ -111,32 +122,47 @@
 		}
 
 		/* Couleur pour "Favori" */
-		.game-label.favorite, .game-type_label.favorite {
+		.game-label.favorite, .game-type-label.favorite, .game-category-label.favorite {
     	    		background-color: #fb8500;
     	    		color: #ffffff;
     	    		margin-right: 10px;
 		}
 
 		/* Couleur pour "Dans ma ludothèque" */
-		.game-label.buy, game-type-label.buy {
+		.game-label.buy, .game-type-label.buy, .game-category-label.buy {
     	    		background-color: #be95c4; /*#219ebc;*/
     	    		color: #ffffff;
     	    		margin-right: 10px;
 		}
 
 		/* Couleur pour "Découverte" */
-		.game-label.discover, game-type-label.discover {
+		.game-label.discover, .game-type-label.discover, .game-category-label.discover {
     	    		background-color: #8ecae6;
     	    		color: #ffffff;
     	    		margin-right: 10px;
 		}
 
 		/* Couleur pour "Classique" */
-		.game-label.classic, game-type-label.classic {
+		.game-label.classic, .game-type-label.classic, .game-category-label.classic {
     	    		background-color: #2492a3;
     	    		color: #ffffff;
     	    		margin-right: 10px;
 		}
+
+                .game-category-label.spiel {
+     	    		background-color: #ffffff;
+    	    		color: #009fe3;
+                        border: solid 1px #009fe3;
+    	    		margin-right: 10px;                       
+                }
+
+                .game-category-label.cannes {
+     	    		background-color: #ffffff;
+    	    		color: #ba9e48;
+                        border: solid 1px #ba9e48;
+    	    		margin-right: 10px;                       
+                }
+
 
 		/* Couleur pour "Extension" */
 		.game-label.extension, game-type-label.extension {
@@ -333,6 +359,14 @@
                                         <option value="tactique">Tactique</option>
                                         <option value="tuiles">Tuiles</option>
                                 </select>
+
+                                <label for="award-label-filter">Filtrer par <b>Récompense</b> :</label>
+                                <select id="award-label-filter">
+                                        <option value="">Tous</option>
+                                        <option value="spiel">Spiel des Jahres</option>
+                                        <option value="cannes">As d'Or</option>
+                                </select>
+
                         </div>
                 </div>
 
@@ -341,7 +375,7 @@
                         <!-- 1 2 3 FAUFILE TOI -->
                         <!-- ----------------- -->
                         <div class="game-card" id="123-faufile-toi">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/123-faufile-toi-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -397,7 +431,9 @@
                         <!-- 7 WONDERS -->
                         <!-- --------- -->
                         <div class="game-card" id="7-wonders">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-category-label discover">Wishlist</span>
+                                <span class="game-category-label spiel">Spiel des Jahres</span>
+                                <span class="game-category-label cannes">As d'Or</span>
                                 <img src="images/7-wonders-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -426,7 +462,9 @@
                         <!-- 7 WONDERS ARCHITECTS -->
                         <!-- -------------------- -->
                         <div class="game-card" id="7-wonders-architecs">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-category-label discover">Wishlist</span>
+                                <span class="game-category-label spiel">Spiel des Jahres</span>
+                                <span class="game-category-label cannes">As d'Or</span>
                                 <img src="images/7-wonders-architects-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -455,7 +493,9 @@
                         <!-- 7 WONDERS DUEL -->
                         <!-- -------------- -->
                         <div class="game-card" id="7-wonders-duel">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-category-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label spiel">Spiel des Jahres</span>
+                                <span class="game-category-label cannes">As d'Or</span>
                                 <img src="images/7-wonders-duel-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -484,7 +524,8 @@
                         <!-- AGENT AVENUE -->
                         <!-- ------------ -->
                         <div class="game-card" id="agent-avenue">
-                                <span class="game-label buy">Dans ma Ludothèque</span>
+                                <span class="game-category-label buy">Dans ma Ludothèque</span>
+                                <span class="game-category-label spiel">Spiel des Jahres</span>
                                 <img src="images/agent-avenue-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -514,7 +555,8 @@
                         <!-- AKROPOLIS -->
                         <!-- --------- -->
                         <div class="game-card" id="akropolis">
-                                <span class="game-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label cannes">As d'Or</span>
                                 <img src="images/akropolis-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -543,7 +585,8 @@
                         <!-- ARCHEO -->
                         <!-- ------ -->
                         <div class="game-card" id="archeo">
-                                <span class="game-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label cannes">As d'Or</span>
                                 <img src="images/archeo-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -627,7 +670,7 @@
                         <!-- BALLOON POP -->
                         <!-- ----------- -->
                         <div class="game-card" id="balloon-pop">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/balloon-pop-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -684,7 +727,7 @@
                         <!-- BEHIND -->
                         <!-- ------ -->
                         <div class="game-card" id="behind">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/behind-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -743,7 +786,7 @@
                         <!-- CAPTAIN FLIP -->
                         <!-- ------------ -->
                         <div class="game-card" id="captain-flip">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/captain-flip-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -772,7 +815,7 @@
                         <!-- CASCADIA -->
                         <!-- -------- -->
                         <div class="game-card" id="cascadia">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/cascadia-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -830,7 +873,7 @@
                         <!-- CHATEAU COMBO -->
                         <!-- ------------- -->
                         <div class="game-card" id="chateau-combo">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/chateau-combo-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -859,7 +902,7 @@
                         <!-- CITY TOUR -->
                         <!-- --------- -->
                         <div class="game-card" id="city-tour">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/city-tour-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -887,7 +930,7 @@
                         <!-- COFFEE RUSH -->
                         <!-- ----------- -->
                         <div class="game-card" id="coffee-rush">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/coffee-rush-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -916,7 +959,7 @@
                         <!-- DAYDREAM -->
                         <!-- -------- -->
                         <div class="game-card" id="daydream">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/daydream-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -944,7 +987,7 @@
                         <!-- DEDALE -->
                         <!-- ------ -->
                         <div class="game-card" id="dedale">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/dedale-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -973,7 +1016,7 @@
                         <!-- DIXIT -->
                         <!-- ----- -->
                         <div class="game-card" id="dixit">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/dixit-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1085,7 +1128,7 @@
                         <!-- EARTH -->
                         <!-- ----- -->
                         <div class="game-card" id="earth">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/earth-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1143,7 +1186,7 @@
                         <!-- EVERDELL -->
                         <!-- -------- -->
                         <div class="game-card" id="everdell">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/everdell-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1200,7 +1243,7 @@
                         <!-- EXPEDITIONS AUTOUR DU MONDE -->
                         <!-- --------------------------- -->
                         <div class="game-card" id="expeditions-autour-du-monde">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/expeditions-autour-du-monde-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -1226,10 +1269,38 @@
                                 <span class="game-type-label conquete">Conquête</span>
                         </div>
 
+                        <!-- FLAMME ROUGE -->
+                        <!-- ------------ -->
+                        <div class="game-card" id="flamme-rouge">
+                                <span class="game-label favorite">Coup de Coeur</span>
+                                <img src="images/flamme-rouge-box.jpg" alt="Boîte du jeu">                                
+                                <div class="game-details">
+                                        <div class="detail">
+                                                <i class="material-icons">face</i>
+                                                <span><b>8</b> ans</span>
+                                        </div>
+                                        <div class="detail">
+                                                <i class="material-icons">people</i>
+                                                <span><b>2-4</b></span>
+                                        </div>
+                                        <div class="detail">
+                                                <i class="material-icons">timer</i>
+                                                <span><b>30</b> mn</span>
+                                        </div>
+                                        <div class="detail-no-border">
+                                                <i class="material-icons">sell</i>
+                                                <span><b>39,90</b> €</span>
+                                        </div>
+                                </div>
+                                <p><b>Flamme Rouge</b> est un jeu de course cycliste où les joueurs dirigent deux coureurs et gèrent leurs cartes d’effort pour avancer. Ils doivent optimiser leur position, profiter de l’aspiration et éviter l’épuisement. Tactique, timing et gestion de l’énergie sont essentiels pour franchir la ligne en tête.</p>
+                                <a href="flamme-rouge.html" >Voir la fiche</a>
+                                <span class="game-type-label course">Course</span>
+                        </div>
+
                         <!-- FLATIRON -->
                         <!-- -------- -->
                         <div class="game-card" id="flatiron">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/flatiron-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1286,7 +1357,7 @@
                         <!-- FOCUS -->
                         <!-- ----- -->
                         <div class="game-card" id="focus">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/focus-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1314,7 +1385,7 @@
                         <!-- FROMAGE -->
                         <!-- ------- -->
                         <div class="game-card" id="fromage">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/fromage-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1372,7 +1443,9 @@
                         <!-- HEAT -->
                         <!-- --------- -->
                         <div class="game-card" id="heat">
-                                <span class="game-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label favorite">Coup de Coeur</span>
+                                <span class="game-category-label spiel">Spiel des Jahres</span>
+                                <span class="game-category-label cannes">As d'Or</span>
                                 <img src="images/heat-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1400,7 +1473,7 @@
                         <!-- HOME STAGING -->
                         <!-- ------------ -->
                         <div class="game-card" id="home-staging">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/home-staging-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1428,7 +1501,7 @@
                         <!-- KINGDOM CROSSING -->
                         <!-- ---------------- -->
                         <div class="game-card" id="kingdom-crossing">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/kingdom-crossing-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1456,7 +1529,7 @@
                         <!-- KINGDOMINO -->
                         <!-- ---------- -->
                         <div class="game-card" id="kingdomino">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/kingdomino-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -1515,7 +1588,7 @@
                         <!-- LE CHATEAU BLANC -->
                         <!-- ---------------- -->
                         <div class="game-card" id="le-chateau-blanc">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/le-chateau-blanc-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -1572,7 +1645,7 @@
                         <!-- LE LABYRINTHE MAGIQUE -->
                         <!-- --------------------- -->
                         <div class="game-card" id="le-labyrinthe-magique">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/le-labyrinthe-magique-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -1601,7 +1674,7 @@
                         <!-- LE RALLYE DES VERS DE TERRE -->
                         <!-- --------------------------- -->
                         <div class="game-card" id="le-rallye-des-vers-de-terre">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/le-rallye-des-vers-de-terre-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1629,7 +1702,7 @@
                         <!-- LES DERNIERS DROIDES -->
                         <!-- -------------------- -->
                         <div class="game-card" id="les-derniers-droides">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/les-derniers-droides-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1658,7 +1731,7 @@
                         <!-- LES FIEFS DE NORBOIS -->
                         <!-- -------------------- -->
                         <div class="game-card" id="les-fiefs-de-norbois">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/les-fiefs-de-norbois-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1686,7 +1759,7 @@
                         <!-- LES RUINES PERDUES DE NARAK -->
                         <!-- --------------------------- -->
                         <div class="game-card" id="les-ruines-perdues-de-narak">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/les-ruines-perdues-de-narak-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1743,7 +1816,7 @@
                         <!-- LIVING FOREST -->
                         <!-- ------------- -->
                         <div class="game-card" id="living-forest">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/living-forest-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1772,7 +1845,7 @@
                         <!-- LOLLY DOGS -->
                         <!-- ----------- -->
                         <div class="game-card" id="lolly-dogs">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/lolly-dogs-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1829,7 +1902,7 @@
                         <!-- MANTIS -->
                         <!-- ------ -->
                         <div class="game-card" id="mantis">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/mantis-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1858,7 +1931,7 @@
                         <!-- MARRAKECH -->
                         <!-- --------- -->
                         <div class="game-card" id="marrakech">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/marrakech-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1887,7 +1960,7 @@
                         <!-- MIND UP -->
                         <!-- ------- -->
                         <div class="game-card" id="mind-up">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/mind-up-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1915,7 +1988,7 @@
                         <!-- MINDBUG -->
                         <!-- ------- -->
                         <div class="game-card" id="mindbug">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/mindbug-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -1944,7 +2017,7 @@
                         <!-- NEOTOPIA -->
                         <!-- -------- -->
                         <div class="game-card" id="neotopia">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/neotopia-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2059,7 +2132,7 @@
                         <!-- PALEO -->
                         <!-- ----- -->
                         <div class="game-card" id="paleo">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/paleo-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2116,7 +2189,7 @@
                         <!-- PETITS SOLDATS -->
                         <!-- -------------- -->
                         <div class="game-card" id="petits-soldats">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/petits-soldats-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2172,7 +2245,7 @@
                         <!-- PRESAGES -->
                         <!-- -------- -->
                         <div class="game-card" id="presages">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/presages-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2200,7 +2273,7 @@
                         <!-- QWINTO -->
                         <!-- ------ -->
                         <div class="game-card" id="qwinto">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/qwinto-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2257,7 +2330,7 @@
                         <!-- SAIL -->
                         <!-- ---- -->
                         <div class="game-card" id="sail">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/sail-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2314,7 +2387,7 @@
                         <!-- SIXTO -->
                         <!-- ----- -->
                         <div class="game-card" id="sixto">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/sixto-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2342,7 +2415,7 @@
                         <!-- SKYJO -->
                         <!-- ----- -->
                         <div class="game-card" id="skyjo">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/skyjo-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2399,7 +2472,7 @@
                         <!-- SPLENDOR DUEL -->
                         <!-- ------------- -->
                         <div class="game-card" id="splendor-duel">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/splendor-duel-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2428,7 +2501,7 @@
                         <!-- SPY GUY -->
                         <!-- ------- -->
                         <div class="game-card" id="spy-guy">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/spy-guy-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2484,7 +2557,7 @@
                         <!-- SYNCRO -->
                         <!-- ------ -->
                         <div class="game-card" id="syncro">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/syncro-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2512,7 +2585,7 @@
                         <!-- TAKE IT EASY -->
                         <!-- ------------ -->
                         <div class="game-card" id="take-it-easy">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/take-it-easy-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2569,7 +2642,7 @@
                         <!-- TERRAFORMING MARS -->
                         <!-- ----------------- -->
                         <div class="game-card" id="terraforming-mars">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/terraforming-mars-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2598,7 +2671,7 @@
                         <!-- THE ART PROJECT -->
                         <!-- --------------- -->
                         <div class="game-card" id="the-art-project">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/the-art-project-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2627,7 +2700,7 @@
                         <!-- THE CREW -->
                         <!-- -------- -->
                         <div class="game-card" id="the-crew">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/the-crew-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2656,7 +2729,7 @@
                         <!-- THE GANG -->
                         <!-- -------- -->
                         <div class="game-card" id="the-gang">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/the-gang-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -2685,7 +2758,7 @@
                         <!-- THE VALE OF ETERNITY -->
                         <!-- -------------------- -->
                         <div class="game-card" id="the-vale-of-eternity">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/the-vale-of-eternity-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2714,7 +2787,7 @@
                         <!-- TIME BOMB -->
                         <!-- --------- -->
                         <div class="game-card" id="time-bomb">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/time-bomb-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2828,7 +2901,7 @@
                         <!-- UNDER FALLING SKIES -->
                         <!-- ------------------- -->
                         <div class="game-card" id="under-falling-skies">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/under-falling-skies-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -2912,7 +2985,7 @@
                         <!-- VROOM -->
                         <!-- ----- -->
                         <div class="game-card" id="vroom">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/vroom-box.jpg" alt="Boîte du jeu">                                
                                 <div class="game-details">
                                         <div class="detail">
@@ -2941,7 +3014,7 @@
                         <!-- WAZABI -->
                         <!-- ------ -->
                         <div class="game-card" id="wazabi">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/wazabi-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -3027,7 +3100,7 @@
                         <!-- ZOMBIES KIDZ EVOLUTION -->
                         <!-- ---------------------- -->
                         <div class="game-card" id="zombie-kidz-evolution">
-                                <span class="game-label discover">Liste de Souhaits</span>
+                                <span class="game-label discover">Wishlist</span>
                                 <img src="images/zombie-kidz-evolution-box.jpg" alt="Boîte du jeu">
                                 <div class="game-details">
                                         <div class="detail">
@@ -3060,19 +3133,23 @@
         document.addEventListener('DOMContentLoaded', function() {
                 const mainFilter = document.getElementById('main-label-filter');
                 const typeFilter = document.getElementById('type-label-filter');
+                const awardFilter = document.getElementById('award-label-filter');
                 const gameCards = document.querySelectorAll('.game-card');
 
                 function filterGames() {
                         const mainValue = mainFilter.value;
                         const typeValue = typeFilter.value;
+                        const awardValue = awardFilter.value;
 
                         gameCards.forEach(card => {
                         const mainLabel = card.querySelector('.game-label');
                         const typeLabels = card.querySelectorAll('.game-type-label');
+                        const awardLabels = card.querySelectorAll('.game-category-label');
                         let mainMatch = !mainValue || (mainLabel && mainLabel.classList.contains(mainValue));
                         let typeMatch = !typeValue || Array.from(typeLabels).some(label => label.classList.contains(typeValue));
+                        let awardMatch = !awardValue || Array.from(awardLabels).some(label => label.classList.contains(awardValue));
 
-                        if (mainMatch && typeMatch) {
+                        if (mainMatch && typeMatch && awardMatch) {
                                 card.style.display = '';
                         } else {
                                 card.style.display = 'none';
@@ -3082,6 +3159,7 @@
 
                 mainFilter.addEventListener('change', filterGames);
                 typeFilter.addEventListener('change', filterGames);
+                awardFilter.addEventListener('change', filterGames);
         });
 
         // Fonction pour récupérer l'état actuel des filtres
@@ -3089,6 +3167,7 @@
         return {
                 type: document.getElementById('main-label-filter').value,
                 category: document.getElementById('type-label-filter').value,
+                award: document.getElementById('award-label-filter').value,
         };
         }
 
@@ -3106,6 +3185,7 @@
                 const filtres = JSON.parse(filtresSauvegardes);
                 document.getElementById('main-label-filter').value = filtres.type;
                 document.getElementById('type-label-filter').value = filtres.category;
+                document.getElementById('award-label-filter').value = filtres.award;
                 appliquerFiltres();
         }
         });
@@ -3114,7 +3194,8 @@
         function appliquerFiltres() {
         const type = document.getElementById('main-label-filter').value;
         const category = document.getElementById('type-label-filter').value;
-        console.log(`Filtres appliqués : main-label-filter=${type}, type-label-filter=${category}`);
+        const award = document.getElementById('award-label-filter').value;
+        console.log(`Filtres appliqués : main-label-filter=${type}, type-label-filter=${category}, award-label-filter=${award}`);
         // Ajoute ici ta logique pour filtrer la liste des jeux
         }
 
