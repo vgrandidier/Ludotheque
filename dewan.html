@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dewan</title>
+	<link rel="icon" type="image/png" href="images/favicon.png">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Caveat&family=Dancing+Script&family=Pacifico&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Chango&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="container">
+
+		<!-- ---------------------- -->
+		<!-- TITRE ET IMAGES DU JEU -->
+		<!-- ---------------------- -->
+        	<div class="game-title">Dewan</div>
+        	<div class="game-box">
+            		<img class="clickable-img" src="images/dewan-box.jpg" alt="Boîte du jeu">
+            		<img class="clickable-img" src="images/dewan-board.jpg" alt="Plateau du jeu">
+
+            <div id="myModal" class="modal">
+                <span class="close">&times;</span>
+                <span class="prev">&#10094;</span>
+                <span class="next">&#10095;</span>
+                <img class="modal-content" id="modalImage">
+            </div>
+        	</div>
+
+        	<div class="game-info">
+
+			<!-- ------------------ -->
+			<!-- DESCRIPTION DU JEU -->
+			<!-- ------------------ -->
+			<p>Dewan est un jeu de stratégie tactique où chaque joueur dirige une tribu à la conquête de territoires. À son tour, il doit choisir une seule action : piocher des cartes Terrain ou placer un camp en dépensant ces cartes. L’objectif est d’optimiser ses déplacements et de remplir des objectifs pour marquer des points.</p>
+			<p>Le jeu propose un plateau modulaire composé de tuiles hexagonales, des cartes Terrain, des camps, des jetons ressources et des tuiles Objectif.  L’univers mêle exploration et survie dans un monde sauvage, où des tribus se disputent des ressources rares comme les baies ou le feu.</p>
+			<p>La partie se termine après un nombre défini de tours ou lorsque les objectifs ont été suffisamment exploités. Les joueurs comptabilisent alors leurs points obtenus grâce aux objectifs accomplis, aux ressources collectées et à leur maîtrise du territoire. Le joueur totalisant le plus de points de victoire est déclaré vainqueur.</p>
+
+			<!-- ----------------------- -->
+			<!-- CARACTERISTIQUES DU JEU -->
+			<!-- ----------------------- -->
+			<div class="game-details">
+    				<div class="detail">
+        				<i class="material-icons">face</i>
+        				<span>à partir de<br><b>10 ans</b></span>
+    				</div>
+    				<div class="detail">
+        				<i class="material-icons">people</i>
+        				<span><b>2-4</b><br>joueurs</span>
+    				</div>
+    				<div class="detail-no-border">
+        				<i class="material-icons">timer</i>
+        				<span><b>30</b><br>minutes</span>
+    				</div>
+			</div>
+
+			<!-- ------------------ -->
+			<!-- REVENDEURS ET PRIX -->
+			<!-- ------------------ -->
+			<div class="price-list">
+				<!-- -------------- -->
+				<!-- LE PASSE TEMPS -->
+				<!-- -------------- -->
+				<div class="price-item">
+						<span class="vendor lepassetemps">Le Passe Temps</span>
+						<span class="price"><a href="https://www.le-passe-temps.com/tous-nos-jeux/29307-dewan.html" target="_blank">37,50 €</a></span>
+				</div>
+				<!-- ------------------- -->
+				<!-- LE TERRIER DES JEUX -->
+				<!-- ------------------- -->
+				<div class="price-item">
+						<span class="vendor lepassetemps">Le Terrier des Jeux</span>
+						<span class="price"><a href="https://leterrierdesjeux.com/products/dewan?_pos=1&_sid=44a3fbb3d&_ss=r" target="_blank">37,50 €</a></span>
+				</div>				
+				<!-- ----- -->
+				<!-- LUDUM -->
+				<!-- ----- -->
+				<div class="price-item">
+						<span class="vendor philibert">Ludum</span>
+						<span class="price"><a href="https://www.ludum.fr/jeux-de-strategie-en-famille/dewan-10914" target="_blank">33,90 €</a></span>
+				</div>
+				<!-- --------- -->
+				<!-- PHILIBERT -->
+				<!-- --------- -->
+				<div class="price-item">
+						<span class="vendor philibert">Philibert</span>
+						<span class="price"><a href="https://www.philibertnet.com/fr/space-cowboys/163102-dewan-3558380135340.html" target="_blank">33,95 €</a></span>
+				</div>
+				<!-- ------ -->
+				<!-- PLAYIN -->
+				<!-- ------ -->
+				<div class="price-item">
+						<span class="vendor philibert">Playin</span>
+						<span class="price"><a href="https://www.play-in.com/fr/produit/608832/dewan" target="_blank">33,50 €</a></span>
+				</div>
+				<!-- ------ -->
+				<!-- AMAZON -->
+				<!-- ------ -->
+				<div class="price-item">
+						<span class="vendor amazon">Amazon</span>
+						<span class="price"><a href="https://www.amazon.fr/Asmodee-strat%C3%A9gique-Placement-modulaire-Fran%C3%A7aise/dp/B0G48ZCXT2/" target="_blank">33,95 €</a></span>
+				</div>
+				<!-- --------- -->
+				<!-- CDISCOUNT -->
+				<!-- --------- -->
+				<div class="price-item">
+						<span class="vendor cdiscount">Cdiscount</span>
+						<span class="best-price"><a href="https://www.cdiscount.com/juniors/jeux-de-societe-cartes/dewan-jeux-de-societe/f-12079-aacki33699.html#mpos=2|mp" target="_blank">30,69 €</a></span>
+				</div>
+				<!-- ------- -->
+				<!-- LA FNAC -->
+				<!-- ------- -->
+				<div class="price-item">
+						<span class="vendor fnac">La Fnac</span>
+						<span class="price"><a href="https://www.fnac.com/Jeu-de-strategie-Asmodee-Dewan/a22578148/w-4" target="_blank">36,31 €</a></span>
+				</div>
+			</div>
+
+			<!-- ------------- -->
+			<!-- VIDEO YOUTUBE -->
+			<!-- ------------- -->
+			<div class="video-container">
+                		<iframe width="100%" height="400" src="https://www.youtube.com/embed/JFtzOHP07x0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            		</div>
+
+			<!-- ----------------- -->
+			<!-- RETOUR A LA LISTE -->
+			<!-- ----------------- -->
+        		<div class="back-button">
+            			<a href="index.html#dewan">Retour à la liste</a>
+        		</div>
+
+		</div>
+	</div>
+
+	<script src="scripts/script.js"></script>
+
+</body>
+</html>
