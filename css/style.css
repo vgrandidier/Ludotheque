@@ -124,6 +124,12 @@ body {
 	color: #023047;
 }
 
+.price-date {
+	font-size: 0.9em;
+	color: #666;
+	margin-top: 5px;
+}
+
 .price {
 	font-weight: bold;
 	color: black;
